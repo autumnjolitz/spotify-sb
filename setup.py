@@ -23,7 +23,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as fh:
 # We separate the version into a separate file so we can let people
 # import everything in their __init__.py without causing ImportError.
 __version__ = None
-exec(open('spotify-sb/about.py').read())
+exec(open('spotify_sb/about.py').read())
 if __version__ is None:
     raise IOError('about.py in project lacks __version__!')
 
