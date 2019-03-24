@@ -23,7 +23,7 @@ if __name__ == '__main__':
     client = Spotify(evt)
 
     if args.mode == 'play':
-        client.play(track_url=args.track_uri, context_url=args.context_url, shuffle=args.shuffle)
+        client.play(track_url=args.track_uri, context_url=args.context_uri, shuffle=args.shuffle)
     elif args.mode == 'pause':
         client.pause()
     else:
