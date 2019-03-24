@@ -16,7 +16,7 @@ if __name__ == '__main__':
     pause.set_defaults(mode='pause')
 
     args = parser.parse_args()
-    if hasattr(args, 'mode'):
+    if not hasattr(args, 'mode'):
         raise ValueError('Must use a subcommand!')
 
     evt = SystemEvent()
