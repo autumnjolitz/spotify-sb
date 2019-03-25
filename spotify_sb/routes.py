@@ -132,8 +132,18 @@ async def handle_alias(request):
     return redirect(request.app.url_for(f'{__name__}.next_or_prev_track'), status=307)
 
 
-@routes.post('/next')
 @routes.post('/pause')
+async def pause(request):
+    spotify = request['spotify']
+    status = spotify.status
+    spotify.pause()
+    t_s = time.time()
+    while time.time() - t_s < 5 and spotify.status == status:
+        await asyncio.sleep(0.5)
+    return await current_status(request)
+
+
+@routes.post('/next')
 @routes.post('/previous')
 async def next_or_prev_track(request):
     spotify = request['spotify']
