@@ -10,6 +10,45 @@ Requires
 Python 3.7 (for API mode)
 Python 3.6?
 
+CLI mode
+-----------
+
+Normal::
+
+    (cpython37) InvincibleReason:~/software/pfstatsd [master]$ python -m spotify_sb info
+    Running: True
+    Status: SpotifyPlayStates.PLAYING
+    Current Track: TrackInfo(title='Pyhä Maa', artist='Turmion Kätilöt', album='Technodiktator', disc_number=1, track_number=4, starred=False, popularity=51, play_count=0, cover_url='http://i.scdn.co/image/eb2161e0d78dc736f79cc9728365d1b98d1956ab', album_artist='Turmion Kätilöt', url='spotify:track:0891uRCvRHGNrkpnGHQHVZ')
+    Position: TrackPosition(current_ms=12154, duration_ms=202821, percentage=5.9924761242672115)
+    (cpython37) InvincibleReason:~/software/pfstatsd [master]$
+
+
+JSON output::
+
+    (cpython37) InvincibleReason:~/software/pfstatsd [master]$ python -m spotify_sb -j info
+    {
+        "position": {
+            "current_ms": 217164,
+            "duration_ms": 286798,
+            "percentage": 75.72019330678735
+        },
+        "running": true,
+        "status": "PLAYING",
+        "track": {
+            "album": "Thornstar (Deluxe Edition)",
+            "album_artist": "Lord Of The Lost",
+            "artist": "Lord Of The Lost",
+            "cover_url": "http://i.scdn.co/image/bf0adc854970284bd8606bf7a1e9dd899a4b928f",
+            "disc_number": 1,
+            "play_count": 0,
+            "popularity": 24,
+            "starred": false,
+            "title": "Haythor",
+            "track_number": 6,
+            "url": "spotify:track:5maIDfdIWbtrnlv83rQqRP"
+        }
+    }
+
 
 API mode
 -----------
