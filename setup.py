@@ -8,7 +8,6 @@ from setuptools import (setup, find_packages)
 here = path.abspath(path.dirname(__file__))
 install_requirements = [
     'pyobjc-framework-ScriptingBridge >= 5.1.2',
-    'instruct'
 ]
 
 # The following are meant to avoid accidental upload/registration of this
@@ -37,7 +36,7 @@ setup(name='spotify-sb', version=__version__,
       include_package_data=True,
       install_requires=install_requirements,
       extras_require={
-          'rest-api': ['sanic'],
+          'rest-api': ['sanic', 'instruct'],
       },
       keywords=['module', 'template', 'library'],
       url="https://github.com/benjolitz/spotify-sb",
