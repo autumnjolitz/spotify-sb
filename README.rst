@@ -15,6 +15,7 @@ API mode
 -----------
 
 Start up an API::
+
     (cpython37) InvincibleReason:~/software/pfstatsd [master]$ python -m spotify_sb rest-api ::1 8080
     Bonded to ('::1', 8080, 0, 0)
     [2019-03-24 20:53:38 -0700] [37059] [INFO] Starting worker [37059]
