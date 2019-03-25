@@ -1,5 +1,8 @@
 Spotify scripting bridge
 ==========================
 
-I wanna play music after ssh'ing and using sudo to log in as the main user.
+I've a Mac Mini that's connected to a TV. I also have a user logged into Spotify but it's not
+the same user as on my laptop. I'd like to be able to instruct it to play a playlist, stop, et al.
+
+
 
