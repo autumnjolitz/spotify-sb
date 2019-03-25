@@ -29,7 +29,7 @@ if __name__ == '__main__':
         api = subparsers.add_parser('rest-api')
         api.set_defaults(mode='api')
         api.add_argument('host', default='0.0.0.0', nargs='?')
-        api.add_argument('port', default=0, nargs='?')
+        api.add_argument('port', default=0, nargs='?', type=int)
 
     play = subparsers.add_parser('play')
     play.set_defaults(mode='play')
