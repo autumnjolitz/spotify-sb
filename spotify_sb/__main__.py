@@ -1,4 +1,5 @@
 import os
+import json
 import ipaddress
 from urllib.parse import urlparse
 import socket
@@ -23,6 +24,7 @@ def make_app(system_events, spotify):
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()
+    parser.add_argument('-j', '--json', action='store_true', help='json output')
     subparsers = parser.add_subparsers()
 
     if routes is not None:
@@ -89,4 +91,7 @@ if __name__ == '__main__':
         app.run(workers=1, sock=sock)
     else:
         raise NotImplementedError(args.mode)
-    print(f'Running: {client.running}\nStatus: {client.status}\nCurrent Track: {client.current_track}')
+    if args.json:
+        print(json.dumps({'running': client.running, 'status': client.status.name, 'track': client.current_track._asdict(), 'position': client.position._asdict()}, indent=4, sort_keys=True))
+    else:
+        print(f'Running: {client.running}\nStatus: {client.status}\nCurrent Track: {client.current_track}\nPosition: {client.position}')
