@@ -28,7 +28,7 @@ if __version__ is None:
     raise IOError('about.py in project lacks __version__!')
 
 setup(name='spotify-sb', version=__version__,
-      author='Ben Jolitz',
+      author='Autumn Jolitz',
       description='Spotify API',
       long_description=long_description,
       license='BSD',
@@ -39,7 +39,7 @@ setup(name='spotify-sb', version=__version__,
           'rest-api': ['sanic', 'instruct'],
       },
       keywords=['module', 'template', 'library'],
-      url="https://github.com/benjolitz/spotify-sb",
+      url="https://github.com/autumnjolitz/spotify-sb",
       classifiers=[
           "Development Status :: 3 - Alpha",
           "Topic :: Utilities",
